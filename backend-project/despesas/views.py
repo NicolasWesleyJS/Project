@@ -14,7 +14,6 @@ class ExpenseViewSet(viewsets.ModelViewSet):
 
 class ExpenseListUser(generics.ListAPIView):
     """Listando todas as despesas de um usuário"""
-    
     def get_queryset(self):
         query_set = Expense.objects.filter(user_id=self.kwargs['pk'])
         return query_set
