@@ -3,9 +3,13 @@ from despesas.models import FinanceUser, Expense
 from .serializer import FinanceUserSerializer, ExpenseSerializer, ExpenseListUserSerializer
 
 # This is the primary repository by principal worker!
+<<<<<<< HEAD
 # This is a second commentary by the primary repository by principal worker!
 
 
+=======
+# This is the comment test by the formation worker! 
+>>>>>>> comments by formation worker
 
 class FinanceUserViewSet(viewsets.ModelViewSet):
     """Exibir todos os usuários"""
