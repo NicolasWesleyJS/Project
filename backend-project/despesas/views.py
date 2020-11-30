@@ -5,8 +5,6 @@ from .serializer import FinanceUserSerializer, ExpenseSerializer, ExpenseListUse
 # This is the primary repository by principal worker!
 # This is a second commentary by the primary repository by principal worker!
 
-
-
 class FinanceUserViewSet(viewsets.ModelViewSet):
     """Exibir todos os usuários"""
     queryset = FinanceUser.objects.all()
