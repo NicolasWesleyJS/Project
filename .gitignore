@@ -1,6 +1,0 @@
-#VS Code
-vscode.code-workspace
-
-.devcontainer
-.dockerignore
-.vscode/
