@@ -2,7 +2,7 @@ from rest_framework import viewsets, generics
 from despesas.models import FinanceUser, Expense
 from .serializer import FinanceUserSerializer, ExpenseSerializer, ExpenseListUserSerializer
 
-# This is the primary repository by principal worker!
+# This is the formation's worker repository!
 
 class FinanceUserViewSet(viewsets.ModelViewSet):
     """Exibir todos os usuários"""
