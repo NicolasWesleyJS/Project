@@ -16,11 +16,13 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from despesas.views import FinanceUserViewSet, ExpenseViewSet, ExpenseListUser
+#from user.views import UserViewSet
 from rest_framework import routers
 
 router = routers.DefaultRouter() # uma rota principal fornecida pelo rest
 router.register('financeusers', FinanceUserViewSet, basename='FinanceUsers')
 router.register('expenses', ExpenseViewSet, basename='Expense')
+#router.register('users', UserViewSet, basename='Users')
 
 urlpatterns = [
     path('admin/', admin.site.urls),

@@ -1,5 +1,18 @@
+#Django
 Django>=3.0,<4.0
+
+#API
 djangorestframework>=3.11
+djangorestframework-simplejwt==4.4.0
+
+#
 markdown>=3
+
+#Corsheaders
 django-cors-headers>=3.4
+
+#Postgres
 psycopg2-binary>=2.8
+
+# model auditing
+django-reversion==3.0.7

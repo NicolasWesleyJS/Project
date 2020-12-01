@@ -7,6 +7,28 @@ services:
             - POSTGRES_DB=postgres
             - POSTGRES_USER=postgres
             - POSTGRES_PASSWORD=postgres
+        ports: 
+            - "15432:5432"
+        networks: 
+            - postgres-network
+        
+    pgadmin:
+        container_name: pgadmin
+        image: dpage/pgadmin4
+        environment:
+            PGADMIN_DEFAULT_EMAIL: "nicolas_mcz@hotmail.com"
+            PGADMIN_DEFAULT_PASSWORD: "Carvalho2019!"
+        volumes:
+            - .:/code/.pgadmin
+        ports:
+            - "${PGADMIN_PORT:-5050}:80"
+        depends_on: 
+            - db
+        networks:
+            - postgres-network
+        restart: unless-stopped
+
+
     web:
         build: .
         command: python backend-project/manage.py runserver 0.0.0.0:8000
@@ -16,6 +38,10 @@ services:
             - "8000:8000"
         depends_on: 
             - db
+        networks: 
+            -  postgres-network
 
 
-
+networks:
+    postgres-network:
+        driver: bridge
