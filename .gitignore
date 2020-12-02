@@ -1,5 +1,8 @@
 
 backend-project/backend/__pycache__/
-backend-project/despesas/__pycache__/
-backend-project/despesas/migrations/__pycache__/
+backend-project/user/__pycache__/
+backend-project/user/migrations/
 backend-project/workspace.code-workspace
+
+.devcontainer/
+workspace.code-workspace
