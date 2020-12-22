@@ -6,3 +6,5 @@ backend-project/workspace.code-workspace
 
 .devcontainer/
 workspace.code-workspace
+
+.env

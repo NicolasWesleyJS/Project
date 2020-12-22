@@ -32,12 +32,15 @@ services:
     backend:
         build: 
             context: ./backend-project/
+            args:
+                - DJANGO_ENV=dev
             dockerfile: dev.Dockerfile
         command: python backend-project/manage.py runserver 0.0.0.0:8000
         volumes:
             - .:/api
         ports:
             - "8000:8000"
+        env_file: .env
         depends_on: 
             - db
         networks: 

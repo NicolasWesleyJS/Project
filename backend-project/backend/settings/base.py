@@ -12,17 +12,20 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 
 from pathlib import Path
 import datetime
+import os
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
-BASE_DIR = Path(__file__).resolve().parent.parent
+ROOT_DIR = Path(__file__).resolve(strict=True).parent.parent.parent
 
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'dbq(kzy#-x@5r%0(ll3@*ud2m*6g(1pqfudv1b(1ce&#y42y8l'
+SECRET_KEY = os.environ.get("DJANGO_SECRET_KEY","!!!SET DJANGO_SECRET_KEY!!!")
 
+#SECRET_KEY = 'dbq(kzy#-x@5r%0(ll3@*ud2m*6g(1pqfudv1b(1ce&#y42y8l'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
@@ -82,13 +85,17 @@ WSGI_APPLICATION = 'backend.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
+POSTGRES_USER = os.environ.get("POSTGRES_USER")
+POSTGRES_PASSWORD = os.environ.get("POSTGRES_PASSWORD")
+POSTGRES_DB = os.environ.get("POSTGRES_DB")
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'postgres',
-        'USER': 'postgres',
-        'PASSWORD': 'postgres',
-        'HOST': 'db',
+        'USER': POSTGRES_USER,
+        'PASSWORD': POSTGRES_PASSWORD,
+        'HOST': POSTGRES_DB,
         'PORT': '5432',
     }
 }
@@ -149,7 +156,7 @@ SIMPLE_JWT = {
 }
 
 #auth
-AUTH_USER_MODEL = 'user.User'
+#AUTH_USER_MODEL = 'user.User'
 
 AUTHENTICATION_BACKENDS = (
     'django.contrib.auth.backends.ModelBackend',
