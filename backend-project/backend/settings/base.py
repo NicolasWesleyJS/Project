@@ -155,8 +155,12 @@ SIMPLE_JWT = {
     'TOKEN_REFRESH_LIFETIME': datetime.timedelta(days=1),
 }
 
+
 #auth
-#AUTH_USER_MODEL = 'user.User'
+AUTH_USER_MODEL = 'user.User'
+AUTHENTICATION_BACKENDS = (
+    'django.contrib.auth.backends.ModelBackend',
+)
 
 AUTHENTICATION_BACKENDS = (
     'django.contrib.auth.backends.ModelBackend',
