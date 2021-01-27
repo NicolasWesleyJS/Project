@@ -1,4 +1,4 @@
-from user.views import UserViewSet
+from .views import UserViewSet
 from rest_framework import routers
 from django.urls import path, include
 
