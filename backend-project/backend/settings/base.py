@@ -25,7 +25,6 @@ ROOT_DIR = Path(__file__).resolve(strict=True).parent.parent.parent
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = os.environ.get("DJANGO_SECRET_KEY","!!!SET DJANGO_SECRET_KEY!!!")
 
-#SECRET_KEY = 'dbq(kzy#-x@5r%0(ll3@*ud2m*6g(1pqfudv1b(1ce&#y42y8l'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
