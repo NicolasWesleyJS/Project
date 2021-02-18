@@ -41,12 +41,16 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    'apps.user',
-    'apps.finance',
-    
+    # Third-part apps
     'reversion',
     'rest_framework',
+    'corsheaders',
 
+
+    # Local apps
+    'apps.user',
+    'apps.finance',
+    'apps.api',
 
 ]
 
@@ -54,6 +58,7 @@ MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware', 
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware', # manage sessions across requests
+    'corsheaders.middleware.CorsMiddleware', # requires the server includes specific HTTP headers that allow or not the client access 
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',# associates users with requests using sessions
@@ -141,7 +146,9 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 REST_FRAMEWORK = {
-    'DEFAULT_PERMISSION_CLASSES': (),
+    'DEFAULT_PERMISSION_CLASSES': (
+        'rest_framework.permissions.AllowAny', #Book
+    ),
     'DEFAULT_AUTHENTICATION_CLASSES': (),
     #'DEFAULT_PERMISSION_CLASSES': ('rest_framework.permissions.IsAuthenticated',),
     'DEFAULT_AUTHENTICATION_CLASSES': (
@@ -165,4 +172,10 @@ AUTHENTICATION_BACKENDS = (
 
 AUTHENTICATION_BACKENDS = (
     'django.contrib.auth.backends.ModelBackend',
+)
+
+
+CORS_ORIGIN_WHITELIST = (
+    'http://localhost:3000',
+    'http://localhost:8000',
 )

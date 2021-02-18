@@ -35,7 +35,7 @@ class Transaction(models.Model):
     total_value = models.FloatField(blank=False)
 
     def __str__(self):
-        return self.description    
+        return f'{self.description} - {self.datetime}'    
 
 class Expense(models.Model):
     item = models.CharField(max_length=40)

@@ -1,0 +1,20 @@
+#mainContent{
+    height: 100vh;
+}
+
+
+#input{
+    background-color: bisque;
+    height: 0.2rem;
+    border: 0;
+}
+
+#buttonSignin {
+    background-color: #1677e6;
+    color: #ffffff;
+    margin-top: 1.5rem;
+}
+
+#buttonSignin:hover{
+    opacity: 0.9;
+}

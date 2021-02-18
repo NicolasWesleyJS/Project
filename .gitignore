@@ -3,6 +3,8 @@ backend-project/backend/__pycache__/
 backend-project/backend/settings/__pycache__/
 backend-project/apps/user/__pycache__/
 backend-project/apps/user/migrations/
+backend-project/apps/finance/__pycache__/
+backend-project/apps/finance/migrations/
 backend-project/workspace.code-workspace
 
 .devcontainer/
